@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>نَفَس</title>
+<meta name="theme-color" content="#f3f5f8" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0f1520" media="(prefers-color-scheme: dark)">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icon-192.png">
+<link rel="apple-touch-icon" href="icon-192.png">
+<style>
+html,body{margin:0;height:100%;background:#f3f5f8;overflow:hidden}
+@media (prefers-color-scheme: dark){html,body{background:#0f1520}}
+iframe{position:fixed;inset:0;width:100%;height:100%;border:0;padding-top:env(safe-area-inset-top);box-sizing:border-box;background:transparent}
+#wait{position:fixed;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;font-family:'DejaVu Sans',sans-serif;color:#5d6879;transition:opacity .25s}
+#wait img{width:84px;height:84px;border-radius:22px}
+#wait.off{opacity:0;pointer-events:none}
+#wait button{font:inherit;border:1px solid #dde2ea;background:#fff;color:#1f3a5f;border-radius:16px;padding:6px 16px;display:none}
+</style></head><body>
+<iframe id="f" title="نَفَس" allow="clipboard-read; clipboard-write"></iframe>
+<div id="wait"><img src="icon-192.png" alt=""><span id="msg">جاري الفتح…</span><button id="retry" type="button">حاول مرة ثانية</button></div>
+<script>
+// رابط Apps Script (نفس رابطك). إذا نشرت "نشر جديد" برابط جديد، غيّره هنا بس
+const EXEC='https://script.google.com/macros/s/AKfycbzLSMMGjTQz0uuofimOuilKH-Gim6K_tj6mKF-lMoL3aY07Fiedj8-YXyRCVOhGXxa3OA/exec';
+const APPS=['','luqma','qirsh','mufakkira'];
+const f=document.getElementById('f'),wait=document.getElementById('wait'),msg=document.getElementById('msg'),retry=document.getElementById('retry');
+const src=app=>EXEC+'?'+(app?'app='+app+'&':'')+'shell=1';
+let t;
+function open(app,push){
+  if(!APPS.includes(app))app='';
+  if(!navigator.onLine){wait.classList.remove('off');msg.textContent='ما فيه نت. نَفَس يحتاج نت عشان يفتح.';retry.style.display='block';return}
+  wait.classList.remove('off');msg.textContent='جاري الفتح…';retry.style.display='none';
+  // replace: ما يضيف خطوة لزر الرجوع داخل الإطار، الرجوع يمشي على البرامج بس
+  try{if(f.contentWindow&&f.src)f.contentWindow.location.replace(src(app));else f.src=src(app)}catch(e){f.src=src(app)}
+  if(push)history.pushState({app},'','#'+(app||'home'));
+  clearTimeout(t);t=setTimeout(()=>{msg.textContent='يتأخر شوي… تأكد من النت.';retry.style.display='block'},15000);
+}
+f.addEventListener('load',()=>{clearTimeout(t);wait.classList.add('off')});
+// الصفحات داخل نَفَس تطلب نفتح برنامج
+addEventListener('message',e=>{
+  if(!/(\.googleusercontent\.com|script\.google\.com)$/.test(new URL(e.origin).hostname))return;
+  const d=e.data;if(d&&typeof d.nafas==='string')open(d.nafas,true);
+});
+// زر الرجوع في الجوال يرجعك للبرنامج اللي قبل
+addEventListener('popstate',e=>open((e.state&&e.state.app)||'',false));
+retry.addEventListener('click',()=>open((history.state&&history.state.app)||'',false));
+addEventListener('online',()=>{if(!f.src)open('',false)});
+const first=location.hash.slice(1);history.replaceState({app:first==='home'?'':first},'');
+open(first==='home'?'':first,false);
+if('serviceWorker' in navigator)navigator.serviceWorker.register('sw.js').catch(()=>{});
+</script></body></html>
