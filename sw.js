@@ -1,6 +1,6 @@
 // يحفظ صفحات يَقَظة على الجوال عشان تفتح بدون نت. بياناتك نفسها في الشيت، ونسخة منها في الجهاز
-const CACHE = 'yaqatha-v2';
-const FILES = ['./', 'index.html', 'luqma.html', 'qirsh.html', 'mufakkira.html', 'manifest.json', 'icon-192.png', 'icon-512.png', 'icon-maskable.png'];
+const CACHE = 'yaqatha-v3';
+const FILES = ['./', 'index.html', 'luqma.html', 'qirsh.html', 'mufakkira.html', 'manifest.json', 'icon-192.png?v=2', 'icon-512.png?v=2', 'icon-maskable.png?v=2'];
 self.addEventListener('install', e => { e.waitUntil(caches.open(CACHE).then(c => c.addAll(FILES))); self.skipWaiting(); });
 self.addEventListener('activate', e => {
   e.waitUntil(caches.keys().then(ks => Promise.all(ks.filter(k => k !== CACHE).map(k => caches.delete(k)))));
