@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl"><head><meta charset="utf-8">
-<meta name="build" content="20261125220146"><title>قِرش</title>
+<meta name="build" content="20261125220521"><title>قِرش</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <link rel="manifest" href="manifest.json"><meta name="theme-color" content="#1E1B2E"><link rel="icon" type="image/png" href="icon-192.png?v=2"><link rel="apple-touch-icon" href="icon-192.png?v=2"><script>var YQ_API="https://script.google.com/macros/s/AKfycbzLSMMGjTQz0uuofimOuilKH-Gim6K_tj6mKF-lMoL3aY07Fiedj8-YXyRCVOhGXxa3OA/exec";if("serviceWorker" in navigator)addEventListener("load",function(){navigator.serviceWorker.register("sw.js").catch(function(){})});</script>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -203,8 +203,10 @@ nav.appnav{display:none}
 .ylogo{display:block;margin:0 auto 6px}
 #sync{display:none}#sync.err{display:block}
 svg.yi{width:1.1em;height:1.1em;vertical-align:-0.18em;display:inline-block;flex:none}
+.yic{margin-inline-start:auto;width:40px;height:40px;border-radius:999px;border:0;background:rgba(255,255,255,.14);color:#FFFFFF;display:grid;place-items:center;cursor:pointer}
+.yic+.yav{margin-inline-start:8px}
 </style></head><body class="a-qirsh">
-<header class="yh"><div class="yh-in"><div class="yh-row"><svg width="28" height="28" viewBox="0 0 64 64" aria-hidden="true"><path d="M32 6 L58 32 L32 58 L6 32 Z" fill="#A8322D"/><path d="M32 19 L45 32 L32 45 L19 32 Z" fill="#D9A441"/><rect x="28" y="28" width="8" height="8" fill="#F3ECE0"/></svg><h1>قِرش</h1><span class="sub"></span></div><div class="yh-x" id="hx"></div>
+<header class="yh"><div class="yh-in"><div class="yh-row"><svg width="28" height="28" viewBox="0 0 64 64" aria-hidden="true"><path d="M32 6 L58 32 L32 58 L6 32 Z" fill="#A8322D"/><path d="M32 19 L45 32 L32 45 L19 32 Z" fill="#D9A441"/><rect x="28" y="28" width="8" height="8" fill="#F3ECE0"/></svg><h1>قِرش</h1><span class="sub"></span><button class="yic" id="mode" type="button" aria-label="الوضع المسائي"></button></div><div class="yh-x" id="hx"></div>
 <nav class="ytabs" id="nav" aria-label="أقسام قِرش"></nav></div></header><svg class="ystrip" width="100%" height="8" aria-hidden="true"><defs><pattern id="ys" width="16" height="8" patternUnits="userSpaceOnUse"><path d="M0 8 L4 0 L8 8 Z" fill="#A8322D"/><path d="M8 8 L12 0 L16 8 Z" fill="#D9A441"/></pattern></defs><rect width="100%" height="8" fill="url(#ys)"/></svg>
 <div class="app">
 <span id="sync"></span>
@@ -216,7 +218,7 @@ svg.yi{width:1.1em;height:1.1em;vertical-align:-0.18em;display:inline-block;flex
 <div class="toast" id="toast"></div>
 <script>
 {
-const APP_ID='qirsh',APP_KEY='qirsh',PFX='q:',BUILD='20261125220146';
+const APP_ID='qirsh',APP_KEY='qirsh',PFX='q:',BUILD='20261125220521';
 const TABS=[['sum','📊','الملخص'],['tx','🧾','الحركات'],['bud','🎯','الميزانية'],['acc','🏦','الحسابات']];
 const $=id=>document.getElementById(id);
 function load(k,d){try{const v=JSON.parse(localStorage.getItem(k));return v==null?d:v}catch(e){return d}}
@@ -294,7 +296,8 @@ document.addEventListener('click',e=>{const a=e.target.closest('a[data-go]');if(
 if(INGAS)gas('apiUrl').then(u=>{if(u){URL0=u;store('nafas-url',u);linkAll()}}).catch(()=>{});
 
 // ---- theme: same key as لُقمة so all apps match ----
-function setMode(m){document.documentElement.dataset.mode=m;store('fit-mode',m);const b=$('mode');if(b)b.textContent=m==='night'?'صباحي':'مسائي'}
+const YQ_MOON='<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 14A8 8 0 1 1 10 4a7 7 0 0 0 10 10z"/></svg>',YQ_SUN='<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 8a4 4 0 1 0 0 8a4 4 0 1 0 0-8M12 2v2M12 20v2M2 12h2M20 12h2M5 5l1.5 1.5M17.5 17.5L19 19M5 19l1.5-1.5M17.5 6.5L19 5"/></svg>';
+function setMode(m){document.documentElement.dataset.mode=m;store('fit-mode',m);const b=$('mode');if(b){b.innerHTML=m==='night'?YQ_SUN:YQ_MOON;b.setAttribute('aria-label',m==='night'?'الوضع الصباحي':'الوضع المسائي')}}
 {const m=load('fit-mode',null);setMode(m||(matchMedia('(prefers-color-scheme: dark)').matches?'night':'day'))}
 
 // ---- items: every thing is one row in the sheet; newest edit wins ----
