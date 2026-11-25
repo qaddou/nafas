@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl"><head><meta charset="utf-8">
-<meta name="build" content="20261125213233"><title>يَقَظة</title>
+<meta name="build" content="20261125213941"><title>يَقَظة</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <link rel="manifest" href="manifest.json"><meta name="theme-color" content="#1E1B2E"><link rel="icon" type="image/png" href="icon-192.png?v=2"><link rel="apple-touch-icon" href="icon-192.png?v=2"><script>var YQ_API="https://script.google.com/macros/s/AKfycbzLSMMGjTQz0uuofimOuilKH-Gim6K_tj6mKF-lMoL3aY07Fiedj8-YXyRCVOhGXxa3OA/exec";if("serviceWorker" in navigator)addEventListener("load",function(){navigator.serviceWorker.register("sw.js").catch(function(){})});</script>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -214,6 +214,7 @@ nav.appnav{display:none}
 #login h3{font-family:'Reem Kufi','IBM Plex Sans Arabic',sans-serif;font-size:30px;color:var(--ink)}
 .ylogo{display:block;margin:0 auto 6px}
 #sync{display:none}#sync.err{display:block}
+svg.yi{width:1.1em;height:1.1em;vertical-align:-0.18em;display:inline-block;flex:none}
 </style></head><body class="a-home">
 <header class="yh"><div class="yh-in"><div class="yh-row"><svg width="28" height="28" viewBox="0 0 64 64" aria-hidden="true"><path d="M32 6 L58 32 L32 58 L6 32 Z" fill="#A8322D"/><path d="M32 19 L45 32 L32 45 L19 32 Z" fill="#D9A441"/><rect x="28" y="28" width="8" height="8" fill="#F3ECE0"/></svg><h1>يَقَظة</h1><span class="sub"></span><button class="yav" id="acct" type="button" aria-label="حسابك">ع</button></div><div class="yh-x" id="hx"></div>
 <nav class="ytabs" id="nav" aria-label="أقسام يَقَظة"></nav></div></header><svg class="ystrip" width="100%" height="8" aria-hidden="true"><defs><pattern id="ys" width="16" height="8" patternUnits="userSpaceOnUse"><path d="M0 8 L4 0 L8 8 Z" fill="#A8322D"/><path d="M8 8 L12 0 L16 8 Z" fill="#D9A441"/></pattern></defs><rect width="100%" height="8" fill="url(#ys)"/></svg>
@@ -227,7 +228,7 @@ nav.appnav{display:none}
 <div class="toast" id="toast"></div>
 <script>
 {
-const APP_ID='nafas',APP_KEY='home',PFX='',BUILD='20261125213233';
+const APP_ID='nafas',APP_KEY='home',PFX='',BUILD='20261125213941';
 const TABS=null;
 const $=id=>document.getElementById(id);
 function load(k,d){try{const v=JSON.parse(localStorage.getItem(k));return v==null?d:v}catch(e){return d}}
@@ -390,7 +391,7 @@ const T=(a,e)=>LANG()==='en'?e:a;
 const M=h=>{h=Math.round(h||0);const s=(Math.abs(h)/100).toLocaleString('en-US',{minimumFractionDigits:Math.abs(h)%100?2:0,maximumFractionDigits:2});return (h<0?'−':'')+s+(LANG()==='en'?' SAR':' ر.س')};
 const MN=h=>{h=Math.round(h||0);return (h<0?'−':'')+(Math.abs(h)/100).toLocaleString('en-US',{maximumFractionDigits:Math.abs(h)%100?2:0})};
 const qn=t=>String(t||'').toLowerCase().replace(/[ً-ْـ]/g,'').replace(/[أإآ]/g,'ا').replace(/ة/g,'ه').replace(/ى/g,'ي').replace(/[٠-٩]/g,c=>'٠١٢٣٤٥٦٧٨٩'.indexOf(c)).trim();
-const DEFCATS={out:[['food','الطعام','Groceries','🛒','#2f8f5b'],['rest','المطاعم','Restaurants','🍔','#e07a2f'],['fuel','البنزين','Fuel','⛽','#c0392b'],['car','السيارة','Car','🚗','#7f8c8d'],['uni','الجامعة','University','🎓','#1f3a5f'],['bills','الفواتير','Bills','🧾','#8e44ad'],['net','الإنترنت','Internet','📶','#2980b9'],['shop','التسوق','Shopping','🛍️','#d35400'],['health','الصحة','Health','💊','#16a085'],['fun','الترفيه','Entertainment','🎮','#f39c12'],['subs','الاشتراكات','Subscriptions','🔁','#9b59b6'],['sadaqa','الصدقات','Charity','🤲','#27ae60'],['travel','السفر','Travel','✈️','#3498db'],['family','العائلة','Family','👨‍👩‍👦','#e84393'],['other','أخرى','Other','📦','#95a5a6']],
+const DEFCATS={out:[['food','الطعام','Groceries','🛒','#3F5A2A'],['rest','المطاعم','Restaurants','🍔','#e07a2f'],['fuel','البنزين','Fuel','⛽','#c0392b'],['car','السيارة','Car','🚗','#7f8c8d'],['uni','الجامعة','University','🎓','#1f3a5f'],['bills','الفواتير','Bills','🧾','#8e44ad'],['net','الإنترنت','Internet','📶','#2980b9'],['shop','التسوق','Shopping','🛍️','#d35400'],['health','الصحة','Health','💊','#16a085'],['fun','الترفيه','Entertainment','🎮','#f39c12'],['subs','الاشتراكات','Subscriptions','🔁','#9b59b6'],['sadaqa','الصدقات','Charity','🤲','#27ae60'],['travel','السفر','Travel','✈️','#3498db'],['family','العائلة','Family','👨‍👩‍👦','#e84393'],['other','أخرى','Other','📦','#95a5a6']],
  in:[['salary','الراتب','Salary','💼','#2f8f5b'],['extra','دخل إضافي','Extra income','➕','#16a085'],['bonus','مكافأة','Bonus','🎁','#f39c12'],['invinc','أرباح استثمار','Investment income','📈','#2980b9'],['iother','دخل آخر','Other income','📥','#95a5a6']]};
 const OLDCAT={'أكل':'food','بنزين':'fuel','رسوم الجامعة':'uni','دعم العائلة':'family','تسوق':'shop','فواتير':'bills','صحة':'health','ترفيه':'fun','اشتراكات':'subs','صدقة':'sadaqa','راتب':'salary','دخل إضافي':'extra','مكافأة':'bonus','أرباح استثمار':'invinc'};
 const ACCKINDS=[['cur','جاري','Current'],['sav','ادخار','Savings'],['cash','نقدي','Cash'],['inv','محفظة استثمارية','Investment'],['oth','أخرى','Other']];
@@ -409,7 +410,9 @@ function finPrep(L){
  for(const [k,v] of Object.entries(L.bud||{})){if(!L.cat[k]&&v){const id=mapCat(k,'out');L.bud[id]=v;delete L.bud[k]}else if(!L.cat[k])delete L.bud[k]}
  for(const a of Object.values(L.acc)){if(OLDKIND[a.kind])a.kind=OLDKIND[a.kind];if(!a.kind)a.kind='cur'}
  return L}
-const catOf=id=>L.cat[id]||{name:T('بدون تصنيف','Uncategorized'),icon:'❔',color:'#95a5a6',kind:'out'};
+// ألوان التصنيفات القديمة تتحول لألوان السدو
+const YCOL={'#2f8f5b':'#3F5A2A','#e07a2f':'#C4610F','#c0392b':'#A8322D','#7f8c8d':'#6B6478','#1f3a5f':'#1E1B2E','#8e44ad':'#7A2420','#2980b9':'#2F5D6E','#d35400':'#B5530F','#16a085':'#4A6A32','#f39c12':'#B8862F','#9b59b6':'#8A2C27','#27ae60':'#3F5A2A','#3498db':'#2F5D6E','#e84393':'#A8322D','#95a5a6':'#8A8496'};
+const catOf=id=>{const c=L.cat[id]||{name:T('بدون تصنيف','Uncategorized'),icon:'❔',color:'#95a5a6',kind:'out'};const y=YCOL[String(c.color||'').toLowerCase()];return y?Object.assign({},c,{color:y}):c};
 const catName=id=>{const c=catOf(id);return (LANG()==='en'&&c.en?c.en:c.name)};
 const catFull=id=>{const c=catOf(id);return (c.parent&&L.cat[c.parent]?catName(c.parent)+' › ':'')+catName(id)};
 const topCat=id=>{const c=L.cat[id];return c&&c.parent&&L.cat[c.parent]?c.parent:id};
@@ -731,6 +734,84 @@ if(load('fit-updated',0)){store('fit-updated',0);setTimeout(()=>toast('تحدّ�
 if(isMain())pull();else if(SYNC.who==='kid'&&SYNC.pin)onKid();else showLogin();
 
 if(location.hash==='#qa'&&typeof openAdd==='function'){history.replaceState(null,'',location.pathname+location.search);route();setTimeout(()=>{try{openAdd('')}catch(e){}},300)}
+// ----- أيقونات يَقَظة: أي إيموجي يطلع بالصفحة يتبدّل بأيقونة خطية من نفس هوية التطبيق -----
+(function(){
+const P={
+ '🛒':'M4 5h2l2 10h10l2-7H7M9 19a1 1 0 1 0 0 .1M17 19a1 1 0 1 0 0 .1',
+ '🍔':'M4 10a8 5 0 0 1 16 0zM4 14h16M5 17h14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2',
+ '⛽':'M5 20V5a1 1 0 0 1 1-1h7a1 1 0 0 1 1 1v15M4 20h11M5 10h9M14 8h2l2 2v7a1.5 1.5 0 0 0 3 0V9l-3-3',
+ '🚗':'M5 16v-4l2-5h10l2 5v4zM7 19v-3M17 19v-3M7.5 13h.01M16.5 13h.01',
+ '🎓':'M3 9l9-4 9 4-9 4zM7 11v4c3 2 7 2 10 0v-4',
+ '🧾':'M6 3h12v18l-3-2-3 2-3-2-3 2zM9 8h6M9 12h6',
+ '📶':'M5 20v-3M10 20v-7M15 20v-11M20 20V4',
+ '🛍':'M6 8h12l-1 12H7zM9 8a3 3 0 0 1 6 0',
+ '💊':'M9 15l6-6M10.5 19.5a4.9 4.9 0 0 1-7-7l9-9a4.9 4.9 0 0 1 7 7z',
+ '🎮':'M7 9h10a4 4 0 0 1 0 8c-1.5 0-2-1-3-1h-4c-1 0-1.5 1-3 1a4 4 0 0 1 0-8zM8 12v2M7 13h2M15.5 12.5h.01M17 14h.01',
+ '🔁':'M4 12a6 6 0 0 1 6-6h8l-3-3M20 12a6 6 0 0 1-6 6H6l3 3',
+ '🤲':'M12 20s-7-4.5-7-10a4 4 0 0 1 7-2.5A4 4 0 0 1 19 10c0 5.5-7 10-7 10z',
+ '✈':'M3 13l18-7-7 18-2-8z',
+ '👨':'M8 7a2 2 0 1 0 0-.1M16 7a2 2 0 1 0 0-.1M4 20v-4a4 4 0 0 1 8 0v4M12 20v-4a4 4 0 0 1 8 0v4',
+ '📦':'M4 8l8-4 8 4v8l-8 4-8-4zM4 8l8 4 8-4M12 12v8',
+ '💼':'M4 8h16v11H4zM9 8V5h6v3M4 13h16',
+ '➕':'M12 5v14M5 12h14',
+ '🎁':'M4 10h16v10H4zM3 7h18v3H3zM12 7v13M12 7c-2-4-6-3-5 0M12 7c2-4 6-3 5 0',
+ '📈':'M4 19h16M5 15l5-5 3 3 6-7M15 6h4v4',
+ '📥':'M4 13l2-8h12l2 8v6H4zM4 13h5l1 2h4l1-2h5',
+ '🏠':'M4 11l8-7 8 7v9h-5v-6h-6v6H4z',
+ '☕':'M5 8h11v6a5 5 0 0 1-10 0zM16 10h2a2 2 0 0 1 0 4h-2M8 3v2M12 3v2',
+ '📚':'M5 4h4v16H5zM10 4h4v16h-4zM15 5l3-1 3 15-3 1z',
+ '👕':'M8 4l4 2 4-2 4 3-2 3-2-1v11H8V9l-2 1-2-3z',
+ '💡':'M9 18h6M10 21h4M12 3a6 6 0 0 0-4 10c1 1 1 2 1 3h6c0-1 0-2 1-3a6 6 0 0 0-4-10z',
+ '🏋':'M3 10v4M6 8v8M18 8v8M21 10v4M6 12h12',
+ '🏦':'M3 10l9-6 9 6M5 10v8M9 10v8M15 10v8M19 10v8M3 20h18',
+ '📅':'M4 5h16v15H4zM4 9h16M8 3v4M16 3v4','🗓':'M4 5h16v15H4zM4 9h16M8 3v4M16 3v4',
+ '📝':'M6 3h9l4 4v14H6zM9 12h6M9 16h4',
+ '🎯':'M12 3a9 9 0 1 0 0 18a9 9 0 1 0 0-18M12 8a4 4 0 1 0 0 8a4 4 0 1 0 0-8M12 12h.01',
+ '🏷':'M3 12V4h8l10 10-8 8zM7.5 7.5h.01',
+ '📊':'M4 20h16M7 16v-5M12 16V6M17 16v-8',
+ '✎':'M4 20h4L19 9l-4-4L4 16zM14 6l4 4','✏':'M4 20h4L19 9l-4-4L4 16zM14 6l4 4',
+ '⚙':'M12 9a3 3 0 1 0 0 6a3 3 0 1 0 0-6M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M5 19l2-2M17 7l2-2',
+ '💾':'M5 4h11l3 3v13H5zM8 4v5h7V4M8 20v-6h8v6',
+ '⬆':'M12 19V5M6 11l6-6 6 6',
+ '💵':'M3 7h18v10H3zM12 9.5a2.5 2.5 0 1 0 0 5a2.5 2.5 0 1 0 0-5',
+ '💰':'M3 7h18v10H3zM12 9.5a2.5 2.5 0 1 0 0 5a2.5 2.5 0 1 0 0-5',
+ '⭐':'M12 3l2.8 5.8 6.2.9-4.5 4.4 1 6.2L12 17.4l-5.5 2.9 1-6.2L3 9.7l6.2-.9z',
+ '🗄':'M4 4h16v4H4zM5 8h14v12H5zM10 12h4',
+ '🗑':'M4 7h16M10 11v6M14 11v6M6 7l1 13h10l1-13M9 7V4h6v3',
+ '💬':'M4 5h16v11H9l-5 4z','🔎':'M11 4a7 7 0 1 0 0 14a7 7 0 1 0 0-14M20 20l-4-4','🔍':'M11 4a7 7 0 1 0 0 14a7 7 0 1 0 0-14M20 20l-4-4',
+ '⚡':'M13 3L5 14h6l-1 7 8-11h-6z',
+ '📍':'M12 21s-7-6-7-12a7 7 0 0 1 14 0c0 6-7 12-7 12zM12 7a2 2 0 1 0 0 4a2 2 0 1 0 0-4',
+ '🔥':'M12 21a6 6 0 0 0 6-6c0-4-3-6-4-10-2 2-3 4-3 6-1-1-2-2-2-4-2 2-3 5-3 8a6 6 0 0 0 6 6z',
+ '🥚':'M12 3c-3 0-6 6-6 10a6 6 0 0 0 12 0c0-4-3-10-6-10z','🍳':'M12 3c-3 0-6 6-6 10a6 6 0 0 0 12 0c0-4-3-10-6-10z',
+ '👌':'M5 12l5 5 9-10','✅':'M5 12l5 5 9-10','👍':'M5 12l5 5 9-10',
+ '💪':'M3 10v4M6 8v8M18 8v8M21 10v4M6 12h12',
+ '🏆':'M8 4h8v5a4 4 0 0 1-8 0zM8 6H5a3 3 0 0 0 3 4M16 6h3a3 3 0 0 1-3 4M12 13v4M8 20h8M10 17h4',
+ '🎉':'M4 20l4-12 8 8zM14 4l1 2M19 9l-2 1M17 3l-1 3',
+ '⏰':'M12 7v5l3 2M12 4a8 8 0 1 0 0 16a8 8 0 1 0 0-16M4 4L2 6M20 4l2 2',
+ '🕌':'M12 3c3 3 6 4 6 8H6c0-4 3-5 6-8zM5 11h14v9H5zM10 20v-4a2 2 0 0 1 4 0v4',
+ '📖':'M3 5c3-1 6-1 9 1 3-2 6-2 9-1v14c-3-1-6-1-9 1-3-2-6-2-9-1zM12 6v14',
+ '🌙':'M20 14A8 8 0 1 1 10 4a7 7 0 0 0 10 10z','☀':'M12 8a4 4 0 1 0 0 8a4 4 0 1 0 0-8M12 2v2M12 20v2M2 12h2M20 12h2M5 5l1.5 1.5M17.5 17.5L19 19M5 19l1.5-1.5M17.5 6.5L19 5','🌅':'M3 18h18M7 18a5 5 0 0 1 10 0M12 4v4M5 10l2 1.5M19 10l-2 1.5',
+ '💧':'M12 3s6 7 6 11a6 6 0 0 1-12 0c0-4 6-11 6-11z','🥛':'M8 3h8M9 3v3l-2 3v12h10V9l-2-3V3M7 13h10',
+ '⚽':'M12 3a9 9 0 1 0 0 18a9 9 0 1 0 0-18M12 7l4 3-1.5 4.5h-5L8 10z',
+ '🍽':'M12 6a6 6 0 1 0 0 12a6 6 0 1 0 0-12M3 4v5a1.5 1.5 0 0 0 3 0V4M4.5 9v11M20 4c-1.5 1-2 3-2 5h2v11',
+ '🚶':'M13 4a1.5 1.5 0 1 0 0 .1M10 21l2-6 3 3v3M12 15l-1-5 3-2 2 3 3 1M11 10l-3 2v3',
+ '🏃':'M13 4a1.5 1.5 0 1 0 0 .1M10 21l2-6 3 3v3M12 15l-1-5 3-2 2 3 3 1M11 10l-3 2v3',
+};
+const PLATE=P['🍽'];
+const RE=/(?:[\u{1F000}-\u{1FAFF}]|[☀-✒✘-➿]|[⭐⬆⭕⏰⌚⌛])(?:[\u{1F3FB}-\u{1F3FF}]|️|‍(?:[\u{1F000}-\u{1FAFF}]|[☀-➿])️?)*/gu;
+const svg=d=>{const n=document.createElementNS('http://www.w3.org/2000/svg','svg');n.setAttribute('viewBox','0 0 24 24');n.setAttribute('class','yi');n.setAttribute('aria-hidden','true');n.setAttribute('fill','none');n.setAttribute('stroke','currentColor');n.setAttribute('stroke-width','2');n.setAttribute('stroke-linecap','round');n.setAttribute('stroke-linejoin','round');const p=document.createElementNS('http://www.w3.org/2000/svg','path');p.setAttribute('d',d);n.appendChild(p);return n};
+function pathFor(e,inKid){const b=e.replace(/[️\u{1F3FB}-\u{1F3FF}]/gu,'').split('‍')[0];return P[b]||(inKid?PLATE:null)}
+function fix(root){if(!root)return;const w=document.createTreeWalker(root,NodeFilter.SHOW_TEXT,{acceptNode:n=>{const p=n.parentNode;if(!p||/^(SCRIPT|STYLE|TEXTAREA|INPUT|OPTION|TITLE)$/.test(p.nodeName))return NodeFilter.FILTER_REJECT;RE.lastIndex=0;return RE.test(n.nodeValue)?NodeFilter.FILTER_ACCEPT:NodeFilter.FILTER_SKIP}});
+ const list=[];let n;while((n=w.nextNode()))list.push(n);
+ for(const t of list){const inKid=!!(t.parentNode.closest&&t.parentNode.closest('#kid'));const f=document.createDocumentFragment();let last=0;const s=t.nodeValue;RE.lastIndex=0;let m;
+  while((m=RE.exec(s))){if(m.index>last)f.appendChild(document.createTextNode(s.slice(last,m.index)));const d=pathFor(m[0],inKid);if(d)f.appendChild(svg(d));last=m.index+m[0].length}
+  if(last<s.length)f.appendChild(document.createTextNode(s.slice(last)));
+  // مسافة زايدة بعد إيموجي محذوف
+  t.parentNode.replaceChild(f,t)}}
+let q=false;const run=()=>{q=false;fix(document.body);document.querySelectorAll('option').forEach(o=>{RE.lastIndex=0;if(RE.test(o.textContent))o.textContent=o.textContent.replace(RE,'').trim()});document.querySelectorAll('[placeholder]').forEach(i=>{RE.lastIndex=0;if(RE.test(i.placeholder))i.placeholder=i.placeholder.replace(RE,'').trim()})};
+new MutationObserver(()=>{if(!q){q=true;requestAnimationFrame(run)}}).observe(document.documentElement,{childList:true,subtree:true,characterData:true});
+if(document.readyState!=='loading')run();else document.addEventListener('DOMContentLoaded',run);
+})();
 
 }
 </script></body></html>
