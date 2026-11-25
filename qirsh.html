@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl"><head><meta charset="utf-8">
-<meta name="build" content="20261125184148"><title>قِرش</title>
+<meta name="build" content="20261125185021"><title>قِرش</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <link rel="manifest" href="manifest.json"><meta name="theme-color" content="#1E1B2E"><link rel="icon" type="image/png" href="icon-192.png?v=2"><link rel="apple-touch-icon" href="icon-192.png?v=2"><script>var YQ_API="https://script.google.com/macros/s/AKfycbzLSMMGjTQz0uuofimOuilKH-Gim6K_tj6mKF-lMoL3aY07Fiedj8-YXyRCVOhGXxa3OA/exec";if("serviceWorker" in navigator)addEventListener("load",function(){navigator.serviceWorker.register("sw.js").catch(function(){})});</script>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -140,6 +140,21 @@ details summary{cursor:pointer;color:var(--accent);font-size:13.5px;margin:6px 0
 .home-btn{text-decoration:none;display:inline-block}
 a.tileapp{text-decoration:none;color:inherit}
 #sync{display:block;font-size:11.5px;color:var(--muted);text-align:center;min-height:16px;margin-top:-4px}
+.qhd{display:flex;gap:8px}.qhd>div{flex:1;background:rgba(255,255,255,.12);border-radius:12px;padding:10px 12px;color:#FFFFFF}
+.qhd small{font-size:12.5px;color:rgba(255,255,255,.85)}.qhd b{display:block;font-size:22px;font-variant-numeric:tabular-nums}.qhd b+small{display:inline}
+.qhd div b{display:inline}.qhd div small:first-child{display:block}
+.qcard{display:flex;flex-direction:column;gap:8px}
+.qh{display:flex;align-items:baseline;gap:8px}.qh h2{margin:0;font-size:16px}.qh small{margin-inline-start:auto;color:var(--muted);font-size:13px}
+.qlink{margin-inline-start:auto;border:0;background:none;color:var(--appt);font:inherit;font-size:13px;cursor:pointer;min-height:36px}
+.qrow{display:flex;align-items:center;gap:10px;min-height:48px;border:0;border-top:1px solid var(--line);background:none;width:100%;text-align:right;font:inherit;color:inherit;padding:6px 0;cursor:pointer}
+.qcard .qh+.qrow{border-top:0}.qrow.nob{cursor:default}
+.qrow .tx{flex:1;display:flex;flex-direction:column;min-width:0}.qrow .tx span{font-size:15px}.qrow .tx small{color:var(--muted);font-size:12.5px}.qrow .tx small.late{color:var(--bad)}
+.qrow b{font-size:15px;font-variant-numeric:tabular-nums}
+.qbig{height:10px;border-radius:10px;background:var(--soft);overflow:hidden}.qbig i{display:block;height:100%;background:var(--app);border-radius:10px}
+.qcat{display:flex;flex-direction:column;gap:4px}.qcat>div:first-child{display:flex;font-size:14px}.qcat>div:first-child b{margin-inline-start:auto;font-variant-numeric:tabular-nums}
+.qbar{height:8px;border-radius:8px;background:var(--soft);overflow:hidden}.qbar i{display:block;height:100%;background:var(--app);opacity:.85;border-radius:8px}
+:root[data-mode="night"] .qbig i,:root[data-mode="night"] .qbar i{background:var(--gold)}
+.qask{margin-bottom:8px}
 :root{--bg:#F3ECE0;--surface:#FFFFFF;--ink:#1E1B2E;--muted:#5C5668;--line:#E6DCCB;--soft:#F7F1E6;--gold:#D9A441;--goldink:#1E1B2E;--sadu:#A8322D;--app:#1E1B2E;--appt:#1E1B2E;--accent:var(--appt);--brand:var(--appt);--good:#3F5A2A;--bad:#A8322D;--warn:#8A6015;--ckbg:var(--app);--ckfg:#FFFFFF;--mint:#D9A441;color-scheme:light}
 body.a-luqma{--app:#3F5A2A;--appt:#3F5A2A}body.a-qirsh{--app:#7A5310;--appt:#7A5310}body.a-mufakkira{--app:#7A2420;--appt:#7A2420}body.a-home{--app:#1E1B2E;--appt:#1E1B2E}
 :root[data-mode="night"]{--bg:#15131F;--surface:#211E2E;--ink:#F3ECE0;--muted:#B9B2C4;--line:#353049;--soft:#2A2639;--good:#A9C98A;--bad:#F08C84;--warn:#E8C27A;--ckfg:#FFFFFF;color-scheme:dark}
@@ -186,6 +201,7 @@ nav.appnav{display:none}
 #login{background:var(--bg)}
 #login h3{font-family:'Reem Kufi','IBM Plex Sans Arabic',sans-serif;font-size:30px;color:var(--ink)}
 .ylogo{display:block;margin:0 auto 6px}
+#sync{display:none}#sync.err{display:block}
 </style></head><body class="a-qirsh">
 <header class="yh"><div class="yh-in"><div class="yh-row"><svg width="28" height="28" viewBox="0 0 64 64" aria-hidden="true"><path d="M32 6 L58 32 L32 58 L6 32 Z" fill="#A8322D"/><path d="M32 19 L45 32 L32 45 L19 32 Z" fill="#D9A441"/><rect x="28" y="28" width="8" height="8" fill="#F3ECE0"/></svg><h1>قِرش</h1><span class="sub"></span></div><div class="yh-x" id="hx"></div>
 <nav class="ytabs" id="nav" aria-label="أقسام قِرش"></nav></div></header><svg class="ystrip" width="100%" height="8" aria-hidden="true"><defs><pattern id="ys" width="16" height="8" patternUnits="userSpaceOnUse"><path d="M0 8 L4 0 L8 8 Z" fill="#A8322D"/><path d="M8 8 L12 0 L16 8 Z" fill="#D9A441"/></pattern></defs><rect width="100%" height="8" fill="url(#ys)"/></svg>
@@ -199,7 +215,7 @@ nav.appnav{display:none}
 <div class="toast" id="toast"></div>
 <script>
 {
-const APP_ID='qirsh',APP_KEY='qirsh',PFX='q:',BUILD='20261125184148';
+const APP_ID='qirsh',APP_KEY='qirsh',PFX='q:',BUILD='20261125185021';
 const TABS=[['sum','📊','الملخص'],['tx','🧾','الحركات'],['bud','🎯','الميزانية'],['acc','🏦','الحسابات']];
 const $=id=>document.getElementById(id);
 function load(k,d){try{const v=JSON.parse(localStorage.getItem(k));return v==null?d:v}catch(e){return d}}
@@ -320,7 +336,7 @@ function rowInfo(k,j){let v={};try{v=JSON.parse(j||'{}')}catch(e){}const r=k.sli
  if(r==='habits')return {t:'عادة',n:v.name||''};
  return {t:r}}
 const tnow=()=>new Date().toLocaleTimeString('ar-SA-u-nu-latn',{hour:'numeric',minute:'2-digit'});
-function syncMsg(t,ok){const e=$('sync');if(e){e.textContent=t;e.style.color=ok===false?'var(--bad)':'var(--muted)'}}
+function syncMsg(t,ok){const e=$('sync');if(e){e.textContent=t;e.style.color=ok===false?'var(--bad)':'var(--muted)';e.classList.toggle('err',ok===false)}}
 function authFail(j){if(j&&j.error==='locked')syncMsg('الدخول مقفول 15 دقيقة بسبب محاولات غلط.',false);else if(j&&(j.error==='pin'||j.error==='kid')){SYNC={url:'',pin:''};store('fit-sync',SYNC);showLogin()}}
 
 // ---- login (same saved key as لُقمة) ----
@@ -484,7 +500,7 @@ function setLang(){const en=LANG()==='en';document.documentElement.lang=en?'en':
 function chipRow(name,items,cur,extra=''){return `<div class="opts" data-qpick="${name}">${items.map(([v,l])=>`<button type="button" data-v="${v}" class="${String(v)===String(cur)?'on':''}">${l}</button>`).join('')}${extra}</div>`}
 const accOpts=(withNone=true)=>(withNone?[['',T('بدون حساب','No account')]]:[]).concat(Object.entries(L.acc).filter(([,a])=>!a.arch).sort((a,b)=>(a[1].ord||0)-(b[1].ord||0)).map(([id])=>[id,accName(id)]));
 const catOpts=(kind,parent='')=>Object.entries(L.cat).filter(([,c])=>c.kind===kind&&!c.arch&&(c.parent||'')===parent).sort((a,b)=>(a[1].ord||0)-(b[1].ord||0));
-function viewMoney(){setLang();const tabs=tabsNow();if(!tabs.some(t=>t[0]===TAB))TAB='sum';
+function viewMoney(){setLang();const tabs=tabsNow();if(!tabs.some(t=>t[0]===TAB))TAB='sum';try{qHeader()}catch(e){}
  if(TAB==='sum')return vSum();if(TAB==='tx')return vTx();if(TAB==='bud')return vBud();if(TAB==='inv')return vInv();if(TAB==='more')return vMore();return ''}
 function askBox(){return `<div class="qask"><input id="qask" autocomplete="off" placeholder="${T('اكتب: دفعت 35 بنزين من D360 · أو اسأل: كم صرفت هالشهر؟','Type: paid 35 fuel from D360 · or ask: how much did I spend?')}"><button type="button" class="sbtn ok" data-qgo="1">${T('تم','Go')}</button></div>${QA?qaHtml():''}
  <div class="qadd"><button type="button" data-qopen="out">＋ ${T('مصروف','Expense')}</button><button type="button" data-qopen="in">＋ ${T('دخل','Income')}</button>${Object.keys(L.acc).length>1?`<button type="button" data-qopen="tr">⇄ ${T('تحويل','Transfer')}</button>`:''}</div>`}
@@ -494,19 +510,21 @@ function qaHtml(){if(QA.q)return `<div class="qans">💬 ${esc(QA.q)}<button typ
  return `<div class="qans"><b>${T('فهمت كذا:','I understood:')}</b><div class="qsum"><span>${tn}</span><b>${M(r.h)}</b>${r.type==='tr'?`<span>${esc(accName(r.acc)||'—')} ← ${esc(accName(r.to)||T('؟ اختر الحساب','? pick account'))}</span>`:`<span>${catOf(r.cat).icon} ${esc(catFull(r.cat))}</span>${r.acc?`<span>🏦 ${esc(accName(r.acc))}</span>`:''}`}<span>📅 ${dshort(r.date)}</span>${r.desc?`<span>📝 ${esc(r.desc)}</span>`:''}${r.paid?'':`<span class="w">${T('ما اندفع للحين','Not paid yet')}</span>`}</div>
  <div class="acts"><button type="button" class="sbtn ok" data-qaok="1">${T('سجّلها','Save')}</button><button type="button" class="sbtn" data-qaedit="1">${T('عدّل','Edit')}</button><button type="button" class="sbtn" data-qaclose="1">${T('إلغاء','Cancel')}</button></div></div>`}
 // ---------- الملخص ----------
-function vSum(){const t=finTotals(),p=ym(),inc=monthSum(p,'in'),out=monthSum(p,'out'),b=budget();const bc=Object.entries(byCat(p)).sort((a,c)=>c[1]-a[1]);
- const up=comDue(addDays(TODAY(),30));const pf=t.pf;
- const acc=Object.entries(L.acc).filter(([,a])=>!a.arch&&!a.hide).sort((a,c)=>(a[1].ord||0)-(c[1].ord||0));
- const months=[-5,-4,-3,-2,-1,0].map(o=>ym(o));const mv=months.map(k=>monthSum(k,'out'));const mx=Math.max(1,...mv);
+function qHeader(){const x=$('hx');if(!x)return;const b=budget(),pd=L.set.payday||27,t=new Date();let nx=new Date(t.getFullYear(),t.getMonth(),pd);if(dkey(nx)<TODAY())nx=new Date(t.getFullYear(),t.getMonth()+1,pd);
+ const dd=Math.round((new Date(dkey(nx)+'T12:00')-new Date(TODAY()+'T12:00'))/864e5);const dl=dd===0?T('اليوم','today'):dd===1?T('بكرة','tomorrow'):dd===2?T('يومين','2 days'):dd+' '+T(dd<=10?'أيام':'يوم','days');
+ x.innerHTML=`<div class="qhd"><div><small>${T('المتاح لين الراتب','Left until payday')}</small><b>${MN(b.avail)}</b> <small>${T('ر.س','SAR')}</small></div><div><small>${T('الراتب بعد','Payday in')}</small><b>${dl}</b> <small>${DAYS[nx.getDay()]} ${nx.getDate()}</small></div></div>`}
+function vSum(){const p=ym(),b=budget(),k=TODAY();
+ const today=Object.entries(L.tx).filter(([,x])=>x.date===k&&x.type==='out'&&isPaid(x)).sort((a,c)=>(c[1].t||0)-(a[1].t||0));const ts=today.reduce((a,[,x])=>a+x.h,0);
+ const bc=Object.entries(byCat(p)).sort((a,c)=>c[1]-a[1]);const mx=bc.length?bc[0][1]:1;const up=comDue(addDays(k,30));
+ const due=c=>{const d=Math.round((new Date(c.due+'T12:00')-new Date(k+'T12:00'))/864e5);return d<0?T('متأخر','overdue'):d===0?T('اليوم','today'):d===1?T('بكرة','tomorrow'):dshort(c.due)};
  return `${askBox()}<div class="stack">
- ${W('💰 '+T('فلوسك','Your money'),`<div class="kpis"><div class="kpi"><b>${MN(t.total)}</b><span>${T('إجمالي الأموال','Net worth')}</span></div><div class="kpi"><b>${MN(t.bank)}</b><span>${T('بالحسابات','Accounts')}</span></div>${vis('inv')?`<div class="kpi"><b>${MN(t.inv)}</b><span>${T('الاستثمار','Investments')}</span></div>`:''}</div>
-  <div class="kpis"><div class="kpi"><b class="g">${MN(inc)}</b><span>${T('دخل الشهر','Income')}</span></div><div class="kpi"><b class="r">${MN(out)}</b><span>${T('مصروف الشهر','Spent')}</span></div><div class="kpi"><b style="color:${b.avail>=0?'var(--good)':'var(--bad)'}">${MN(b.avail)}</b><span>${T('المتاح','Available')}</span></div></div>
-  ${acc.length?`<div class="qaccs">${acc.map(([id])=>`<button type="button" class="qacc" data-qacc="${id}"><span>${esc(accName(id))}${L.set.defAcc===id?' ⭐':''}</span><b>${M(accBal(id))}</b></button>`).join('')}${t.na?`<div class="qacc"><span>${T('بدون حساب','No account')}</span><b>${M(t.na)}</b></div>`:''}</div>`:`<p class="empty">${T('تقدر تسجل مصاريفك بدون حسابات. وإذا تبي أرصدة البنوك، أضفها من المزيد ← الحسابات.','You can log without accounts. Add bank accounts in More › Accounts.')}</p>`}`)}
- ${up.length&&vis('bud')?W('📅 '+T('التزامات قادمة (30 يوم)','Upcoming commitments (30 days)'),up.slice(0,5).map(([id,c])=>`<div class="li"><div class="t"><b>${esc(c.name)}</b><span class="${c.due<TODAY()?'late':''}">${dshort(c.due)}${c.due<TODAY()?' · '+T('متأخر','overdue'):''}</span></div><span class="amt">${M(c.h)}</span><button type="button" class="sbtn ok" data-qpay="${id}">${T('دفعت','Paid')}</button></div>`).join('')):''}
- <div class="grid2">${W('🧾 '+T('مصاريف الشهر حسب التصنيف','Spending by category'),bc.length?catBars(bc):`<div class="empty">${T('سجّل مصاريفك وأوريك وين تروح.','Log expenses to see where it goes.')}</div>`)}
- ${W('📊 '+T('آخر 6 أشهر','Last 6 months'),mv.some(Boolean)?`<div class="mchart">${months.map((k,i)=>`<div class="mc"><b>${mv[i]?MN(mv[i]):''}</b><i style="height:${Math.round(mv[i]/mx*100)}%"></i><span>${ymName(k).split(' ')[0]}</span></div>`).join('')}</div>`:`<div class="empty">${T('ما فيه بيانات للحين.','No data yet.')}</div>`)}</div>
- ${vis('inv')&&pf.rows.length?W('📈 '+T('أداء المحفظة','Portfolio'),`<div class="kpis"><div class="kpi"><b>${MN(pf.put)}</b><span>${T('حطيت','Invested')}</span></div><div class="kpi"><b>${MN(pf.value)}</b><span>${T('القيمة الحالية','Value')}</span></div><div class="kpi"><b class="${pf.total>=0?'g':'r'}">${MN(pf.total)}</b><span>${pf.pct.toFixed(1)}%</span></div></div>`):''}
- ${W('🕑 '+T('آخر الحركات','Recent'),txList(Object.entries(L.tx),6)||`<div class="empty">${T('ما فيه حركات للحين.','No activity yet.')}</div>`)}</div>`}
+ <section class="w qcard"><div class="qh"><h2>${T('اليوم صرفت','Today you spent')} ${MN(ts)} ${T('ر.س','SAR')}</h2><button type="button" class="qlink" data-tab="tx">${T('الكل','All')}</button></div>
+  ${today.length?today.map(([id,x])=>`<button type="button" class="qrow" data-qedit="${id}"><span class="tx"><span>${esc(x.desc||catName(x.cat))}</span><small>${esc(catName(x.cat))}${x.acc?' · '+esc(accName(x.acc)):''}</small></span><b>${MN(x.h)}</b></button>`).join(''):`<p class="empty">${T('ما صرفت شي اليوم.','Nothing spent today.')}</p>`}</section>
+ <section class="w qcard"><div class="qh"><h2>${ymName(p).split(' ')[0]}</h2><small>${T('صرفت','Spent')} ${MN(b.paid)}${b.base?' '+T('من','of')+' '+MN(b.base):''}</small></div>
+  <div class="qbig"><i style="width:${Math.min(100,b.pct)}%"></i></div>
+  ${bc.length?bc.slice(0,6).map(([c,v])=>`<div class="qcat"><div><span>${esc(catName(c))}</span><b>${MN(v)}</b></div><div class="qbar"><i style="width:${v/mx*100}%"></i></div></div>`).join(''):`<p class="empty">${T('سجّل مصاريفك وأوريك وين تروح.','Log expenses to see where they go.')}</p>`}</section>
+ ${up.length&&vis('bud')?`<section class="w qcard"><div class="qh"><h2>${T('التزامات قادمة','Upcoming')}</h2></div>${up.slice(0,5).map(([id,c])=>`<div class="qrow nob"><span class="tx"><span>${esc(c.name)}</span><small class="${c.due<=addDays(k,1)?'late':''}">${due(c)}</small></span><b>${MN(c.h)}</b><button type="button" class="sbtn" data-qpay="${id}">${T('دفعت','Paid')}</button></div>`).join('')}</section>`:''}
+ </div>`}
 function catBars(bc){const tot=bc.reduce((a,x)=>a+x[1],0);const top=bc.slice(0,6),rest=bc.slice(6).reduce((a,x)=>a+x[1],0);
  return `<div class="sbar">${top.map(([c,v])=>`<i style="width:${v/tot*100}%;background:${catOf(c).color}"></i>`).join('')}${rest?`<i style="width:${rest/tot*100}%;background:#bbb"></i>`:''}</div><div class="cats">${top.map(([c,v])=>`<div class="li"><span class="dot" style="background:${catOf(c).color}"></span><div class="t"><b>${catOf(c).icon} ${esc(catName(c))}</b></div><span class="amt">${M(v)} <small>${Math.round(v/tot*100)}%</small></span></div>`).join('')}${rest?`<div class="li"><span class="dot" style="background:#bbb"></span><div class="t"><b>${T('الباقي','Others')}</b></div><span class="amt">${M(rest)}</span></div>`:''}</div>`}
 function txList(arr,n){const rows=arr.sort((a,b)=>a[1].date<b[1].date?1:a[1].date>b[1].date?-1:(b[1].t||0)-(a[1].t||0)).slice(0,n||1e9);let last='';

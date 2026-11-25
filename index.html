@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl"><head><meta charset="utf-8">
-<meta name="build" content="20261125184148"><title>يَقَظة</title>
+<meta name="build" content="20261125185021"><title>يَقَظة</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <link rel="manifest" href="manifest.json"><meta name="theme-color" content="#1E1B2E"><link rel="icon" type="image/png" href="icon-192.png?v=2"><link rel="apple-touch-icon" href="icon-192.png?v=2"><script>var YQ_API="https://script.google.com/macros/s/AKfycbzLSMMGjTQz0uuofimOuilKH-Gim6K_tj6mKF-lMoL3aY07Fiedj8-YXyRCVOhGXxa3OA/exec";if("serviceWorker" in navigator)addEventListener("load",function(){navigator.serviceWorker.register("sw.js").catch(function(){})});</script>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -213,6 +213,7 @@ nav.appnav{display:none}
 #login{background:var(--bg)}
 #login h3{font-family:'Reem Kufi','IBM Plex Sans Arabic',sans-serif;font-size:30px;color:var(--ink)}
 .ylogo{display:block;margin:0 auto 6px}
+#sync{display:none}#sync.err{display:block}
 </style></head><body class="a-home">
 <header class="yh"><div class="yh-in"><div class="yh-row"><svg width="28" height="28" viewBox="0 0 64 64" aria-hidden="true"><path d="M32 6 L58 32 L32 58 L6 32 Z" fill="#A8322D"/><path d="M32 19 L45 32 L32 45 L19 32 Z" fill="#D9A441"/><rect x="28" y="28" width="8" height="8" fill="#F3ECE0"/></svg><h1>يَقَظة</h1><span class="sub"></span><button class="yav" id="acct" type="button" aria-label="حسابك">ع</button></div><div class="yh-x" id="hx"></div>
 <nav class="ytabs" id="nav" aria-label="أقسام يَقَظة"></nav></div></header><svg class="ystrip" width="100%" height="8" aria-hidden="true"><defs><pattern id="ys" width="16" height="8" patternUnits="userSpaceOnUse"><path d="M0 8 L4 0 L8 8 Z" fill="#A8322D"/><path d="M8 8 L12 0 L16 8 Z" fill="#D9A441"/></pattern></defs><rect width="100%" height="8" fill="url(#ys)"/></svg>
@@ -226,7 +227,7 @@ nav.appnav{display:none}
 <div class="toast" id="toast"></div>
 <script>
 {
-const APP_ID='nafas',APP_KEY='home',PFX='',BUILD='20261125184148';
+const APP_ID='nafas',APP_KEY='home',PFX='',BUILD='20261125185021';
 const TABS=null;
 const $=id=>document.getElementById(id);
 function load(k,d){try{const v=JSON.parse(localStorage.getItem(k));return v==null?d:v}catch(e){return d}}
@@ -347,7 +348,7 @@ function rowInfo(k,j){let v={};try{v=JSON.parse(j||'{}')}catch(e){}const r=k.sli
  if(r==='habits')return {t:'عادة',n:v.name||''};
  return {t:r}}
 const tnow=()=>new Date().toLocaleTimeString('ar-SA-u-nu-latn',{hour:'numeric',minute:'2-digit'});
-function syncMsg(t,ok){const e=$('sync');if(e){e.textContent=t;e.style.color=ok===false?'var(--bad)':'var(--muted)'}}
+function syncMsg(t,ok){const e=$('sync');if(e){e.textContent=t;e.style.color=ok===false?'var(--bad)':'var(--muted)';e.classList.toggle('err',ok===false)}}
 function authFail(j){if(j&&j.error==='locked')syncMsg('الدخول مقفول 15 دقيقة بسبب محاولات غلط.',false);else if(j&&(j.error==='pin'||j.error==='kid')){SYNC={url:'',pin:''};store('fit-sync',SYNC);showLogin()}}
 
 // ---- login (same saved key as لُقمة) ----
